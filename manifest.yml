@@ -6,5 +6,6 @@ applications:
   services:
   - questionnaires-db # cf create-service p-mysql 100mb-dev questionnaires-db
   - metrics-forwarder
+  - syslog-drain
   domains:
   - cfapps.pez.pivotal.io
