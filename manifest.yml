@@ -1,11 +1,7 @@
 applications:
-- name: questionnaires
-  buildpack: https://github.com/cloudfoundry/java-buildpack#v3.18
+- name: jjug-enquete
   memory: 1g
   path: target/jjug-enquete-0.0.1-SNAPSHOT.jar
   services:
   - questionnaires-db # cf create-service p-mysql 100mb-dev questionnaires-db
-  - metrics-forwarder
-  - syslog-drain
-  domains:
-  - cfapps.pez.pivotal.io
+  - jjug-metrics-forwarder
