@@ -44,7 +44,7 @@ public class CfpImportController {
                 .map(n -> Session.builder()
                         .sessionId(UUID.fromString(n.get("_links").get("self").get("href").asText().split("submissions/")[1]))
                         .sessionName(n.get("title").asText())
-                        .speakers(StreamSupport.stream(n.get("speakers").spliterator(), false).map(x -> x.get("github").asText()).collect(Collectors.toList()))
+                        .speakers(StreamSupport.stream(n.get("speakers").spliterator(), false).map(x -> x.get("github").asText().replace("https://github.com/", "")).collect(Collectors.toList()))
                         .speakerDisplayNames(StreamSupport.stream(n.get("speakers").spliterator(), false).map(x -> x.get("name").asText()).collect(Collectors.toList()))
                         .build())
                 .collect(Collectors.toList());
