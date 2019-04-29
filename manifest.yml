@@ -1,6 +1,7 @@
 applications:
 - name: jjug-enquete
-  memory: 1g
+  memory: 2g
+  buildpack: java_buildpack
   path: target/jjug-enquete-0.0.2-SNAPSHOT.jar
   services:
   - questionnaires-db # cf create-service p-mysql 100mb-dev questionnaires-db
